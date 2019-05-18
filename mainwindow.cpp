@@ -35,7 +35,7 @@ bool MainWindow::haveHeader( QString filePath )
 void MainWindow::addHeader( QString filePath )
 {
     QStringList list;
-    list << "/* vokoscreen - A desktop recorder\n";
+    list << "/* vokoscreenNG - A desktop recorder\n";
     list << " * Copyright (C) 2017-2019 Volker Kohaupt\n";
     list << " * \n";
     list << " * Author:\n";
@@ -123,7 +123,7 @@ void MainWindow::removeHeader( QString filePath )
 void MainWindow::editHeader()
 {
     // read *.cpp and *.h
-    QDirIterator iterator( "/home/vk/bin/src/", QDir::Files, QDirIterator::Subdirectories );
+    QDirIterator iterator( "/home/vk/Programmieren/vokoscreenNG/src/", QDir::Files, QDirIterator::Subdirectories );
     while ( iterator.hasNext() )
     {
         iterator.next();
