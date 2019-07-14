@@ -122,11 +122,18 @@ void MainWindow::removeHeader( QString filePath )
 
 void MainWindow::editHeader()
 {
+    QString exclude = "/src/QGlobalShortcut";
+
     // read *.cpp and *.h
     QDirIterator iterator( "/home/vk/Programmieren/vokoscreenNG/src/", QDir::Files, QDirIterator::Subdirectories );
     while ( iterator.hasNext() )
     {
         iterator.next();
+        if ( iterator.fileInfo().absoluteFilePath().contains( exclude ) )
+        {
+            continue;
+        }
+
         if ( ( iterator.fileInfo().suffix() == "cpp" ) or ( iterator.fileInfo().suffix() == "h" ) )
         {
             if ( haveHeader( iterator.filePath() ) == false )
